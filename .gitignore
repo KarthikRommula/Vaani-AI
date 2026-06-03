@@ -18,6 +18,8 @@ yarn-error.log*
 
 # env files
 .env*
+# ...but keep the committed template (no secrets)
+!.env.example
 
 # local data (payments, etc.)
 /data/

@@ -5,62 +5,102 @@ export interface AdminUser {
     serviceName: string;
 }
 
-// Map of 45 admin credentials for each government service
-export const ADMIN_CREDENTIALS: Record<string, AdminUser> = {
-    "master.admin@vaani.gov.in": { email: "master.admin@vaani.gov.in", password: "admin@master", serviceId: 0, serviceName: "All Services" },
-    "aadhaar.admin@vaani.gov.in": { email: "aadhaar.admin@vaani.gov.in", password: "admin@aadhaar", serviceId: 1, serviceName: "Aadhaar Update" },
-    "pan.admin@vaani.gov.in": { email: "pan.admin@vaani.gov.in", password: "admin@pan", serviceId: 2, serviceName: "PAN Card Application" },
-    "voter.admin@vaani.gov.in": { email: "voter.admin@vaani.gov.in", password: "admin@voter", serviceId: 3, serviceName: "Voter ID Registration" },
-    "birth.admin@vaani.gov.in": { email: "birth.admin@vaani.gov.in", password: "admin@birth", serviceId: 4, serviceName: "Birth Certificate" },
-    "caste.admin@vaani.gov.in": { email: "caste.admin@vaani.gov.in", password: "admin@caste", serviceId: 5, serviceName: "Caste Certificate" },
-    "income.admin@vaani.gov.in": { email: "income.admin@vaani.gov.in", password: "admin@income", serviceId: 6, serviceName: "Income Certificate" },
-    "passport.admin@vaani.gov.in": { email: "passport.admin@vaani.gov.in", password: "admin@passport", serviceId: 7, serviceName: "Passport Application" },
-    "driving.admin@vaani.gov.in": { email: "driving.admin@vaani.gov.in", password: "admin@driving", serviceId: 8, serviceName: "Driving License" },
-    "vehicle.admin@vaani.gov.in": { email: "vehicle.admin@vaani.gov.in", password: "admin@vehicle", serviceId: 9, serviceName: "Vehicle Registration" },
-    "hsrp.admin@vaani.gov.in": { email: "hsrp.admin@vaani.gov.in", password: "admin@hsrp", serviceId: 10, serviceName: "High Security HSRP" },
-    "railway.admin@vaani.gov.in": { email: "railway.admin@vaani.gov.in", password: "admin@railway", serviceId: 11, serviceName: "Railway Senior Citizen" },
-    "bank.admin@vaani.gov.in": { email: "bank.admin@vaani.gov.in", password: "admin@bank", serviceId: 12, serviceName: "Bank KYC Update" },
-    "epf.admin@vaani.gov.in": { email: "epf.admin@vaani.gov.in", password: "admin@epf", serviceId: 13, serviceName: "EPF Withdrawal" },
-    "itr.admin@vaani.gov.in": { email: "itr.admin@vaani.gov.in", password: "admin@itr", serviceId: 14, serviceName: "Income Tax Return" },
-    "gst.admin@vaani.gov.in": { email: "gst.admin@vaani.gov.in", password: "admin@gst", serviceId: 15, serviceName: "GST Registration" },
-    "mudra.admin@vaani.gov.in": { email: "mudra.admin@vaani.gov.in", password: "admin@mudra", serviceId: 16, serviceName: "Personal Loan Mudra" },
-    "oldage.admin@vaani.gov.in": { email: "oldage.admin@vaani.gov.in", password: "admin@oldage", serviceId: 17, serviceName: "Old Age Pension" },
-    "widow.admin@vaani.gov.in": { email: "widow.admin@vaani.gov.in", password: "admin@widow", serviceId: 18, serviceName: "Widow Pension" },
-    "kisan.admin@vaani.gov.in": { email: "kisan.admin@vaani.gov.in", password: "admin@kisan", serviceId: 19, serviceName: "Kisan Samman Nidhi" },
-    "ration.admin@vaani.gov.in": { email: "ration.admin@vaani.gov.in", password: "admin@ration", serviceId: 20, serviceName: "Ration Card Application" },
-    "postmatric.admin@vaani.gov.in": { email: "postmatric.admin@vaani.gov.in", password: "admin@postmatric", serviceId: 21, serviceName: "Post-Matric Scholarship" },
-    "prematric.admin@vaani.gov.in": { email: "prematric.admin@vaani.gov.in", password: "admin@prematric", serviceId: 22, serviceName: "Pre-Matric Scholarship" },
-    "ayushman.admin@vaani.gov.in": { email: "ayushman.admin@vaani.gov.in", password: "admin@ayushman", serviceId: 23, serviceName: "Ayushman Bharat" },
-    "disability.admin@vaani.gov.in": { email: "disability.admin@vaani.gov.in", password: "admin@disability", serviceId: 24, serviceName: "Disability Certificate" },
-    "mgnrega.admin@vaani.gov.in": { email: "mgnrega.admin@vaani.gov.in", password: "admin@mgnrega", serviceId: 25, serviceName: "MGNREGA Job Card" },
-    "udyam.admin@vaani.gov.in": { email: "udyam.admin@vaani.gov.in", password: "admin@udyam", serviceId: 26, serviceName: "Udyam Registration" },
-    "fssai.admin@vaani.gov.in": { email: "fssai.admin@vaani.gov.in", password: "admin@fssai", serviceId: 27, serviceName: "FSSAI License" },
-    "pm-awas.admin@vaani.gov.in": { email: "pm-awas.admin@vaani.gov.in", password: "admin@pm-awas", serviceId: 28, serviceName: "PM Awas Yojana" },
-    "electricity.admin@vaani.gov.in": { email: "electricity.admin@vaani.gov.in", password: "admin@electricity", serviceId: 29, serviceName: "New Electricity Connection" },
-    "water.admin@vaani.gov.in": { email: "water.admin@vaani.gov.in", password: "admin@water", serviceId: 30, serviceName: "Water Pipe Connection" },
-    "ujjwala.admin@vaani.gov.in": { email: "ujjwala.admin@vaani.gov.in", password: "admin@ujjwala", serviceId: 31, serviceName: "Gas Connection Ujjwala" },
-    "soil.admin@vaani.gov.in": { email: "soil.admin@vaani.gov.in", password: "admin@soil", serviceId: 32, serviceName: "Soil Health Card" },
-    "kcc.admin@vaani.gov.in": { email: "kcc.admin@vaani.gov.in", password: "admin@kcc", serviceId: 33, serviceName: "Kisan Credit Card" },
-    "pesticide.admin@vaani.gov.in": { email: "pesticide.admin@vaani.gov.in", password: "admin@pesticide", serviceId: 34, serviceName: "Pesticide License" },
-    "legalheir.admin@vaani.gov.in": { email: "legalheir.admin@vaani.gov.in", password: "admin@legalheir", serviceId: 35, serviceName: "Legal Heir Certificate" },
-    "marriage.admin@vaani.gov.in": { email: "marriage.admin@vaani.gov.in", password: "admin@marriage", serviceId: 36, serviceName: "Marriage Registration" },
-    "death.admin@vaani.gov.in": { email: "death.admin@vaani.gov.in", password: "admin@death", serviceId: 37, serviceName: "Death Registration" },
-    "dsc.admin@vaani.gov.in": { email: "dsc.admin@vaani.gov.in", password: "admin@dsc", serviceId: 38, serviceName: "Digital Signature Cert" },
-    "domain.admin@vaani.gov.in": { email: "domain.admin@vaani.gov.in", password: "admin@domain", serviceId: 39, serviceName: "Domain Registration (.in)" },
-    "arms.admin@vaani.gov.in": { email: "arms.admin@vaani.gov.in", password: "admin@arms", serviceId: 40, serviceName: "Arms License" },
-    "ex-service.admin@vaani.gov.in": { email: "ex-service.admin@vaani.gov.in", password: "admin@ex-service", serviceId: 41, serviceName: "Ex-Servicemen Identity" },
-    "senior.admin@vaani.gov.in": { email: "senior.admin@vaani.gov.in", password: "admin@senior", serviceId: 42, serviceName: "Senior Citizen Card" },
-    "transgender.admin@vaani.gov.in": { email: "transgender.admin@vaani.gov.in", password: "admin@transgender", serviceId: 43, serviceName: "Transgender ID Card" },
-    "sc-st.admin@vaani.gov.in": { email: "sc-st.admin@vaani.gov.in", password: "admin@sc-st", serviceId: 44, serviceName: "SC/ST Fellowship" },
-    "minority.admin@vaani.gov.in": { email: "minority.admin@vaani.gov.in", password: "admin@minority", serviceId: 45, serviceName: "Minority Scholarship" },
-    "bank-open.admin@vaani.gov.in": { email: "bank-open.admin@vaani.gov.in", password: "admin@bank-open", serviceId: 46, serviceName: "Bank Account Opening" },
-    "residence.admin@vaani.gov.in": { email: "residence.admin@vaani.gov.in", password: "admin@residence", serviceId: 47, serviceName: "Residence Certificate" },
-    "health-ins.admin@vaani.gov.in": { email: "health-ins.admin@vaani.gov.in", password: "admin@health-ins", serviceId: 48, serviceName: "Health Insurance Enrollment" },
-    "medical-reim.admin@vaani.gov.in": { email: "medical-reim.admin@vaani.gov.in", password: "admin@medical-reim", serviceId: 49, serviceName: "Medical Reimbursement" },
-    "women-welfare.admin@vaani.gov.in": { email: "women-welfare.admin@vaani.gov.in", password: "admin@women-welfare", serviceId: 50, serviceName: "Women Welfare Schemes" },
-    "building-worker.admin@vaani.gov.in": { email: "building-worker.admin@vaani.gov.in", password: "admin@building-worker", serviceId: 51, serviceName: "Building Worker Registration" },
-    "housing.admin@vaani.gov.in": { email: "housing.admin@vaani.gov.in", password: "admin@housing", serviceId: 52, serviceName: "Housing Scheme Application" },
-    "fir.admin@vaani.gov.in": { email: "fir.admin@vaani.gov.in", password: "admin@fir", serviceId: 53, serviceName: "FIR Registration" },
-    "police-verif.admin@vaani.gov.in": { email: "police-verif.admin@vaani.gov.in", password: "admin@police-verif", serviceId: 54, serviceName: "Police Verification" },
-    "utility.admin@vaani.gov.in": { email: "utility.admin@vaani.gov.in", password: "admin@utility", serviceId: 55, serviceName: "Electricity / Water Connection" },
-};
+/**
+ * Admin password secret.
+ *
+ * Passwords are NOT hardcoded. Each admin's password is derived as
+ * `${ADMIN_PASSWORD_SECRET}@${serviceKey}` where `serviceKey` is the email
+ * prefix before `.admin@vaani.gov.in` (e.g. `aadhaar` -> `<secret>@aadhaar`).
+ *
+ * This value MUST be provided via the NEXT_PUBLIC_ADMIN_PASSWORD_SECRET
+ * environment variable. If it is missing we FAIL CLOSED: no credentials are
+ * generated, so every login attempt is rejected. There is intentionally no
+ * hardcoded fallback default.
+ */
+const ADMIN_PASSWORD_SECRET = process.env.NEXT_PUBLIC_ADMIN_PASSWORD_SECRET;
+
+// Service directory: emails are identifiers (not secrets) plus service metadata.
+// Passwords are generated at runtime from ADMIN_PASSWORD_SECRET.
+interface AdminServiceEntry {
+    key: string;
+    email: string;
+    serviceId: number;
+    serviceName: string;
+}
+
+const ADMIN_SERVICES: AdminServiceEntry[] = [
+    { key: "master", email: "master.admin@vaani.gov.in", serviceId: 0, serviceName: "All Services" },
+    { key: "aadhaar", email: "aadhaar.admin@vaani.gov.in", serviceId: 1, serviceName: "Aadhaar Update" },
+    { key: "pan", email: "pan.admin@vaani.gov.in", serviceId: 2, serviceName: "PAN Card Application" },
+    { key: "voter", email: "voter.admin@vaani.gov.in", serviceId: 3, serviceName: "Voter ID Registration" },
+    { key: "birth", email: "birth.admin@vaani.gov.in", serviceId: 4, serviceName: "Birth Certificate" },
+    { key: "caste", email: "caste.admin@vaani.gov.in", serviceId: 5, serviceName: "Caste Certificate" },
+    { key: "income", email: "income.admin@vaani.gov.in", serviceId: 6, serviceName: "Income Certificate" },
+    { key: "passport", email: "passport.admin@vaani.gov.in", serviceId: 7, serviceName: "Passport Application" },
+    { key: "driving", email: "driving.admin@vaani.gov.in", serviceId: 8, serviceName: "Driving License" },
+    { key: "vehicle", email: "vehicle.admin@vaani.gov.in", serviceId: 9, serviceName: "Vehicle Registration" },
+    { key: "hsrp", email: "hsrp.admin@vaani.gov.in", serviceId: 10, serviceName: "High Security HSRP" },
+    { key: "railway", email: "railway.admin@vaani.gov.in", serviceId: 11, serviceName: "Railway Senior Citizen" },
+    { key: "bank", email: "bank.admin@vaani.gov.in", serviceId: 12, serviceName: "Bank KYC Update" },
+    { key: "epf", email: "epf.admin@vaani.gov.in", serviceId: 13, serviceName: "EPF Withdrawal" },
+    { key: "itr", email: "itr.admin@vaani.gov.in", serviceId: 14, serviceName: "Income Tax Return" },
+    { key: "gst", email: "gst.admin@vaani.gov.in", serviceId: 15, serviceName: "GST Registration" },
+    { key: "mudra", email: "mudra.admin@vaani.gov.in", serviceId: 16, serviceName: "Personal Loan Mudra" },
+    { key: "oldage", email: "oldage.admin@vaani.gov.in", serviceId: 17, serviceName: "Old Age Pension" },
+    { key: "widow", email: "widow.admin@vaani.gov.in", serviceId: 18, serviceName: "Widow Pension" },
+    { key: "kisan", email: "kisan.admin@vaani.gov.in", serviceId: 19, serviceName: "Kisan Samman Nidhi" },
+    { key: "ration", email: "ration.admin@vaani.gov.in", serviceId: 20, serviceName: "Ration Card Application" },
+    { key: "postmatric", email: "postmatric.admin@vaani.gov.in", serviceId: 21, serviceName: "Post-Matric Scholarship" },
+    { key: "prematric", email: "prematric.admin@vaani.gov.in", serviceId: 22, serviceName: "Pre-Matric Scholarship" },
+    { key: "ayushman", email: "ayushman.admin@vaani.gov.in", serviceId: 23, serviceName: "Ayushman Bharat" },
+    { key: "disability", email: "disability.admin@vaani.gov.in", serviceId: 24, serviceName: "Disability Certificate" },
+    { key: "mgnrega", email: "mgnrega.admin@vaani.gov.in", serviceId: 25, serviceName: "MGNREGA Job Card" },
+    { key: "udyam", email: "udyam.admin@vaani.gov.in", serviceId: 26, serviceName: "Udyam Registration" },
+    { key: "fssai", email: "fssai.admin@vaani.gov.in", serviceId: 27, serviceName: "FSSAI License" },
+    { key: "pm-awas", email: "pm-awas.admin@vaani.gov.in", serviceId: 28, serviceName: "PM Awas Yojana" },
+    { key: "electricity", email: "electricity.admin@vaani.gov.in", serviceId: 29, serviceName: "New Electricity Connection" },
+    { key: "water", email: "water.admin@vaani.gov.in", serviceId: 30, serviceName: "Water Pipe Connection" },
+    { key: "ujjwala", email: "ujjwala.admin@vaani.gov.in", serviceId: 31, serviceName: "Gas Connection Ujjwala" },
+    { key: "soil", email: "soil.admin@vaani.gov.in", serviceId: 32, serviceName: "Soil Health Card" },
+    { key: "kcc", email: "kcc.admin@vaani.gov.in", serviceId: 33, serviceName: "Kisan Credit Card" },
+    { key: "pesticide", email: "pesticide.admin@vaani.gov.in", serviceId: 34, serviceName: "Pesticide License" },
+    { key: "legalheir", email: "legalheir.admin@vaani.gov.in", serviceId: 35, serviceName: "Legal Heir Certificate" },
+    { key: "marriage", email: "marriage.admin@vaani.gov.in", serviceId: 36, serviceName: "Marriage Registration" },
+    { key: "death", email: "death.admin@vaani.gov.in", serviceId: 37, serviceName: "Death Registration" },
+    { key: "dsc", email: "dsc.admin@vaani.gov.in", serviceId: 38, serviceName: "Digital Signature Cert" },
+    { key: "domain", email: "domain.admin@vaani.gov.in", serviceId: 39, serviceName: "Domain Registration (.in)" },
+    { key: "arms", email: "arms.admin@vaani.gov.in", serviceId: 40, serviceName: "Arms License" },
+    { key: "ex-service", email: "ex-service.admin@vaani.gov.in", serviceId: 41, serviceName: "Ex-Servicemen Identity" },
+    { key: "senior", email: "senior.admin@vaani.gov.in", serviceId: 42, serviceName: "Senior Citizen Card" },
+    { key: "transgender", email: "transgender.admin@vaani.gov.in", serviceId: 43, serviceName: "Transgender ID Card" },
+    { key: "sc-st", email: "sc-st.admin@vaani.gov.in", serviceId: 44, serviceName: "SC/ST Fellowship" },
+    { key: "minority", email: "minority.admin@vaani.gov.in", serviceId: 45, serviceName: "Minority Scholarship" },
+    { key: "bank-open", email: "bank-open.admin@vaani.gov.in", serviceId: 46, serviceName: "Bank Account Opening" },
+    { key: "residence", email: "residence.admin@vaani.gov.in", serviceId: 47, serviceName: "Residence Certificate" },
+    { key: "health-ins", email: "health-ins.admin@vaani.gov.in", serviceId: 48, serviceName: "Health Insurance Enrollment" },
+    { key: "medical-reim", email: "medical-reim.admin@vaani.gov.in", serviceId: 49, serviceName: "Medical Reimbursement" },
+    { key: "women-welfare", email: "women-welfare.admin@vaani.gov.in", serviceId: 50, serviceName: "Women Welfare Schemes" },
+    { key: "building-worker", email: "building-worker.admin@vaani.gov.in", serviceId: 51, serviceName: "Building Worker Registration" },
+    { key: "housing", email: "housing.admin@vaani.gov.in", serviceId: 52, serviceName: "Housing Scheme Application" },
+    { key: "fir", email: "fir.admin@vaani.gov.in", serviceId: 53, serviceName: "FIR Registration" },
+    { key: "police-verif", email: "police-verif.admin@vaani.gov.in", serviceId: 54, serviceName: "Police Verification" },
+    { key: "utility", email: "utility.admin@vaani.gov.in", serviceId: 55, serviceName: "Electricity / Water Connection" },
+];
+
+/**
+ * Map of admin credentials, keyed by lowercased email.
+ *
+ * If NEXT_PUBLIC_ADMIN_PASSWORD_SECRET is not set, this map is EMPTY so that
+ * authentication fails closed (no login can ever succeed).
+ */
+export const ADMIN_CREDENTIALS: Record<string, AdminUser> = ADMIN_PASSWORD_SECRET
+    ? ADMIN_SERVICES.reduce<Record<string, AdminUser>>((acc, svc) => {
+          acc[svc.email] = {
+              email: svc.email,
+              password: `${ADMIN_PASSWORD_SECRET}@${svc.key}`,
+              serviceId: svc.serviceId,
+              serviceName: svc.serviceName,
+          };
+          return acc;
+      }, {})
+    : {};

@@ -139,9 +139,12 @@ Create a `.env.local` file in the project root. The following environment variab
 | `NEXT_PUBLIC_BASE_URL` | No       | Public base URL used when building links/QR references.                     |
 | `NEXT_PUBLIC_ADMIN_KEY`| No       | Client-side admin key used by the admin UI.                                 |
 | `ADMIN_SECRET_KEY`     | No       | Server-side admin secret for protected admin operations.                    |
+| `NEXT_PUBLIC_ADMIN_PASSWORD_SECRET` | Yes\*\* | Secret used to derive admin portal login passwords (`${secret}@${serviceKey}`). If unset, all admin logins fail closed. |
 | `SUBMISSION_DB_FILE`   | No       | Override path for the submissions JSON store (defaults to `data/submissions.json`). |
 
 \* Without `RESEND_API_KEY`, the app runs but the OTP email endpoint returns a "not configured" response.
+
+\*\* `NEXT_PUBLIC_ADMIN_PASSWORD_SECRET` is required to use the admin portal. Admin passwords are no longer hardcoded; each is derived as `${NEXT_PUBLIC_ADMIN_PASSWORD_SECRET}@${serviceKey}` (e.g. with secret `admin`, the Aadhaar admin password is `admin@aadhaar`). See `.env.example`.
 
 ```env
 GROQ_API_KEY=your_groq_api_key
